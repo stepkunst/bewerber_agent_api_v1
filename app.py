@@ -6,7 +6,11 @@ import os, json
 app = Flask(__name__)
 CORS(app)
 
+from openai import OpenAI
+import os
+
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+
 
 @app.route("/", methods=["GET"])
 def home():
